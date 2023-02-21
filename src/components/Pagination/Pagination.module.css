@@ -1,0 +1,20 @@
+.paginationContainer{
+    display: flex;
+    align-items: center;
+    margin: 20px auto 20px;
+    gap: 10px;
+}
+.paginationContainer a{
+    display: block;
+    padding: 20px;
+    color: white;
+    border: 1px solid white;
+    cursor:pointer;
+}
+.paginationContainer a:hover{
+    background-color: #b4b1985b;
+}
+:global .selected{
+    font-size: 30px;
+    background-color: #B4B198;
+}

@@ -1,0 +1,70 @@
+.basketItems{
+    background-color: #455442;
+    border-radius: 10px;
+    color: white;
+    text-shadow: 1px 1px 1px #000 ;
+}
+.basketItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.counterContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+}
+.counterBtn{
+    padding: 5px;
+    font-size: 25px;
+    background-color: chocolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    color: #000;
+    border-radius: 50%
+}
+.basketItem img{
+    max-width: 300px;
+}
+.basketItem__price{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.basketItem__trashIcon{
+    color:rgba(255, 0, 0, 0.548);
+    cursor: pointer;
+}
+.emptyBasket{
+    text-align: center;
+}
+.totalContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #000;
+    padding-top: 5px;
+}
+.totalContainer span{
+    color: rgb(0, 180, 0);
+    text-shadow: 1px 1px 1px #000;
+}
+.confirmBtn{
+    color:aliceblue;
+    text-shadow: 1px 1px 1px #000;
+    background-color: green;
+    padding: 10px;
+    border-radius: 10px;
+}
+.confirmBtn:hover{
+    text-decoration: underline;
+}
+.confirmBtn:active{
+    transform: scale(0.9);
+    text-decoration: none;
+}

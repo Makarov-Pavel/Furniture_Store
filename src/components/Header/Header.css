@@ -1,0 +1,29 @@
+.header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 40px;
+}
+.header__logo img{
+    object-fit: cover;
+    height: 100px;
+    width: 200px;
+}
+.header__logo img:hover{
+    opacity: 0.5;
+}
+.menu__list{
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+}
+.menu__item a{
+    font-size: 20px;
+    text-decoration: none;
+    color:#30352E;
+    transition: opacity ease-in-out 0.25s;
+}
+.menu__item a:hover{
+    opacity: 0.5;
+}

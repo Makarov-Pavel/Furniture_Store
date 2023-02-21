@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --ff: 'Josefin Sans', sans-serif;
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: 0 auto 10px;
+    padding: 30px 20px 30px;
+
+    background-color: #455442;
+    border: 1px solid #fff;
+    border-top: none;
+    border-radius: 10px;
+}
+
+.main-container div {
+    margin-bottom: 20px;
+}
+
+.main-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 200px;
+    gap: 10px;
+    transition: transform ease-in-out 0.25s;
+}
+
+.main-item:hover {
+    transform: scale(1.1);
+}
+
+.main-item img {
+    width: 350px;
+    min-height: 200px;
+    max-height: 200px;
+    -webkit-animation: slide-in-fwd-center 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-fwd-center 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.main-item h2 {
+    font-family: var(--ff);
+    font-size: 20px;
+}
+
+.main-item p {
+    font-family: var(--ff);
+    font-size: 17px;
+}
+
+.main-item span {
+    font-family: var(--ff);
+    color: rgb(3, 177, 3);
+}
+
+.main-item span::before {
+    content: 'Price: ';
+    color: #fff;
+}
+
+.main-item span::after {
+    content: ' $';
+}
+
+.main-addBtn {
+    border: 1px solid #fff;
+    padding: 10px 0;
+    width: 100%;
+    font-family: var(--ff);
+}
+
+.main-addBtn:hover {
+    color: black;
+    background-color: green;
+}
+.main-addBtn:active {
+    transform: scale(0.95);
+}
+
+
+
+
+
+
+@-webkit-keyframes slide-in-fwd-center {
+    0% {
+        -webkit-transform: translateZ(-1400px);
+        transform: translateZ(-1400px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-fwd-center {
+    0% {
+        -webkit-transform: translateZ(-1400px);
+        transform: translateZ(-1400px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
