@@ -1,7 +1,7 @@
 import React from "react";
 import './InformationAbout.css'
 
-function InformationAbout(){
+const InformationAbout:React.FC =() =>{
 
     return(
         <div className='info-container'>

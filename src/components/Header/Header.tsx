@@ -1,14 +1,15 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "./Header.css";
 import { SlBasket } from "react-icons/sl";
 import { Link } from "react-router-dom";
 import Search from "../Search/Search";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllItemsCount } from "../../Redux/Slices/HeaderSlice";
+import { RootState } from "../../Redux/store";
 
-function Header(props) {
+const Header:React.FC =() =>{
   const dispatch = useDispatch()
-  const {inBasket, allItemsCount} = useSelector(state=>state.HeaderSlice)
+  const {inBasket, allItemsCount} = useSelector((state:RootState)=>state.HeaderSlice)
 
   useEffect(()=>{
     dispatch(getAllItemsCount())

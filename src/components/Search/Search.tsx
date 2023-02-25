@@ -1,29 +1,29 @@
-import React, { useRef, useState, useCallback } from 'react'
+import { useRef, useState, useCallback } from 'react'
 import {BiSearch} from 'react-icons/bi'
 import {CgClose} from 'react-icons/cg'
 import {useDispatch} from 'react-redux'
 import { setSearchValue } from '../../Redux/Slices/SearchSlice'
-import debounce from 'lodash.debounce';
+import debounce from 'lodash.debounce'
 import './Search.css'
 
-function Search(props) {
+const Search:React.FC =() =>{
   const [value, setValue] = useState('')
   const dispatch = useDispatch()
 
-  const debounceFunc = useCallback(debounce((str)=>{
+  const debounceFunc = useCallback(debounce((str:string)=>{
     dispatch(setSearchValue(str))
   }, 500),[])
 
-  const onEnterPressHandler = (e) => {
-    if(e.key === "Enter") dispatch(setSearchValue(e.target.value))
+  const onEnterPressHandler = (e:React.KeyboardEvent) => {
+    if(e.key === "Enter") dispatch(setSearchValue((e.target as HTMLInputElement).value))
   }
 
-  const onChangeHandler = (e) => {
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value)
     debounceFunc(e.target.value)
   }
 
-  const inputRef = useRef()
+  const inputRef = useRef<HTMLInputElement>(null)
 
   return (
     <div className='search-container'>
@@ -32,12 +32,11 @@ function Search(props) {
         className='search-input'
         ref={inputRef}
         placeholder='Search...'
-        style={{backgroundColor:'white', color:'black'}}
         value={value}
         onChange={onChangeHandler}
-        onKeyDown = {onEnterPressHandler}
+        onKeyDown = {(e)=>onEnterPressHandler(e)}
         />
-        {value && <CgClose className='close-icon' onClick={()=>{setValue(''); debounceFunc(''); inputRef.current.focus()}}/>}
+        {value && <CgClose className='close-icon' onClick={()=>{setValue(''); debounceFunc(''); inputRef.current?.focus()}}/>}
     </div>
   )
 }

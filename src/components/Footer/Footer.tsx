@@ -1,8 +1,7 @@
-import React from "react";
 import './Footer.css'
 import {AiOutlineCopyright} from 'react-icons/ai'
 
-function Footer(){
+const Footer:React.FC =() =>{
     return(
         <footer className="footer">
             <p>Copyright information <AiOutlineCopyright/></p>
