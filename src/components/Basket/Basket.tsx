@@ -3,6 +3,7 @@ import {BsTrash} from 'react-icons/bs'
 import { onAddBasketItem, onRemoveItem, removeFromBasket,clearBasket } from "../../Redux/Slices/HeaderSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Redux/store";
+import { useMemo } from "react";
 
 interface IBasketElement{
   id: number,
@@ -16,18 +17,25 @@ interface IBasketElement{
 const Basket:React.FC =() =>{
   const {inBasket, sum} = useSelector((state:RootState) => state.HeaderSlice)
   const dispatch = useDispatch()
+
+
+  let allBasketItems:number = 0;
+  useMemo(() => inBasket.map(el => allBasketItems += el.count!), [inBasket])
   
   return (
-    <div>
-      <div>
-        {inBasket.length !== 0 && <button type="button" className="clearBasketBtn" onClick={() => dispatch(clearBasket())}>Clear basket</button>}
+      <div className="basketContainer">
+        {inBasket.length !== 0 && <div className="clearBasketContainer">
+          <span>In basket: <b>{allBasketItems}</b> items</span>
+          <button type="button" className="clearBasketBtn" onClick={() => dispatch(clearBasket())}>Clear basket</button>
+          </div>
+        }
         {<div className="basketItems">
             {inBasket.map((el:IBasketElement) => (
               <div key={el.id} className="basketItem">
                 <h2>{el.name}</h2>
                 <img src={el.img} alt="123"></img>
                 <div className="counterContainer">
-                  <button type="button" className="counterBtn" onClick={()=>dispatch(onRemoveItem(el))}>-</button>
+                  <button type="button" className= {`counterBtn ${el.count === 1 ? 'counterBtn-one' : ''} `} onClick={()=>dispatch(onRemoveItem(el))}>-</button>
                   <span>{el.count}</span>
                   <button type="button" className="counterBtn" onClick={()=>dispatch(onAddBasketItem(el))}>+</button>
                 </div>
@@ -50,8 +58,6 @@ const Basket:React.FC =() =>{
           </div>
         }
       </div>
-      
-    </div>
   );
 }
 

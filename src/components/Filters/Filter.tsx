@@ -1,23 +1,57 @@
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
 import Main from "../Main/Main";
 import {RiArrowDropDownLine,RiArrowDropUpLine} from 'react-icons/ri'
 import './Filter.css'
 import { useDispatch, useSelector } from "react-redux";
 import { setSort, setStatus } from "../../Redux/Slices/FilterSlice";
+import { changeIsLoading, setItems } from "../../Redux/Slices/FilterSlice";
 import { RootState } from "../../Redux/store";
+import axios from 'axios'
+import React from "react";
 
 interface IFilterProps{
   setCurrentPage: (page:number) => void,
+  currentPage: number
 }
 
-const Filter:React.FC<IFilterProps> = ({setCurrentPage}) =>{
+
+const Filter:React.FC<IFilterProps> = React.memo(({setCurrentPage,currentPage}) =>{
   const [sortBlockOpen, setSortBlockOpen] = useState(false)
   const {status, sort} = useSelector((state:RootState) => state.FilterSlice)
+  const searchValue = useSelector((state:RootState) => state.SearchSlice.searchValue)
+  const limitOnPage = 6;
   const dispatch = useDispatch()
 
+
+  useEffect(() => {
+    dispatch(changeIsLoading(true))    
+    axios
+    .get(
+      `https://63e25b54109336b6cb05d56b.mockapi.io/items?page=${currentPage}&limit=${limitOnPage}${
+        searchValue && `&name=${searchValue}`
+      }${
+        status === "a"
+          ? "&type=a"
+          : status === "d"
+          ? "&type=d"
+          : status === "s"
+          ? "&type=s"
+          : ""
+      }${
+        sort === "Low"
+          ? "&sortBy=price&order=asc"
+          : sort === "Hight"
+          ? "&sortBy=price&order=desc"
+          : ""
+      }`)
+      .then(arr => {
+        dispatch(setItems(arr.data));
+        dispatch(changeIsLoading(false))
+      }) 
+      .catch(err => alert(err.message))
+  }, [status, currentPage, searchValue, sort]);
+
     return (
-     
       <div className="filter-container"> 
         <div className="filters">
           <h4 className={`filter-title ${status === 'all' ? 'filter-active' : ''}`} onClick={() => {dispatch(setStatus('all')); setCurrentPage(1)}}>All</h4>
@@ -49,7 +83,7 @@ const Filter:React.FC<IFilterProps> = ({setCurrentPage}) =>{
     );
 
 
-}
+})
 
 export default Filter;
 

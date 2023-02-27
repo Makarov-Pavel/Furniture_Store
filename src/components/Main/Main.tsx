@@ -3,8 +3,9 @@ import Skeleton from "./Skeleton";
 import { useDispatch, useSelector } from "react-redux";
 import { onAddBasketItem } from "../../Redux/Slices/HeaderSlice";
 import { RootState } from '../../Redux/store';
+import React from 'react';
 
-const Main:React.FC =() =>{
+const Main:React.FC = () =>{
     const searchValue = useSelector((state:RootState) => state.SearchSlice.searchValue)
     const {items,isLoading} = useSelector((state:RootState) => state.FilterSlice)
     const dispatch = useDispatch()
@@ -16,6 +17,7 @@ const Main:React.FC =() =>{
         description: string,
         price: string,
     }
+
 
     return(
         <div className='main-container'>
@@ -37,11 +39,11 @@ const Main:React.FC =() =>{
                     <img src={el.img} alt='213'></img>
                     <p>{el.description}</p>
                     <span>{el.price}</span>
-                    <button className="main-addBtn" onClick={()=>dispatch(onAddBasketItem(el))}>Add to basket</button>
+                    <button type='button' className="main-addBtn" onClick={()=>dispatch(onAddBasketItem(el))}>Add to basket</button>
                 </div>
             )}
         </div>
     )
-}
+} 
 
 export default Main

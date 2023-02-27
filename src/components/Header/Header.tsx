@@ -1,19 +1,28 @@
-import { useEffect } from "react";
 import "./Header.css";
 import { SlBasket } from "react-icons/sl";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Search from "../Search/Search";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllItemsCount } from "../../Redux/Slices/HeaderSlice";
+import { useSelector } from "react-redux";
 import { RootState } from "../../Redux/store";
+import React, { useEffect, useRef } from "react";
 
-const Header:React.FC =() =>{
-  const dispatch = useDispatch()
-  const {inBasket, allItemsCount} = useSelector((state:RootState)=>state.HeaderSlice)
+const Header:React.FC = React.memo(() =>{
+  const {inBasket} = useSelector((state:RootState)=>state.HeaderSlice)
+  const location = useLocation()
+  const refFirstLoading = useRef(true)
+  
 
   useEffect(()=>{
-    dispatch(getAllItemsCount())
-  },[inBasket,dispatch])
+    if(!refFirstLoading.current){
+      const json = JSON.stringify(inBasket)
+      localStorage.setItem('basket', json)
+    }
+    refFirstLoading.current = false
+  },[inBasket])
+
+
+  let allItemsCount:number = 0;
+  inBasket.map(el => allItemsCount += el.count!)
 
   return (
     <header className="header">
@@ -22,7 +31,7 @@ const Header:React.FC =() =>{
           <img src="/images/logo.png" alt="logo"></img>
         </Link>
       </div>
-      <Search />
+       {location.pathname === '/' && <Search />}
       <div className="header__menu">
         <ul className="menu__list">
           <li className="menu__item">
@@ -41,6 +50,6 @@ const Header:React.FC =() =>{
       </div>
     </header>
   );
-}
+})
 
 export default Header;

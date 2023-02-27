@@ -1,6 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { getBasketFromLS } from '../../utils/getBasketFromLS'
 
-type BasketItemType = {
+
+export type BasketItemType = {
     id: number,
     name: string,
     img: string,
@@ -10,14 +12,12 @@ type BasketItemType = {
 
 interface IHeaderState {
     inBasket: BasketItemType[],
-    sum: number,
-    allItemsCount: number
+    sum: number
 }
 
 const initialState:IHeaderState = {
-    inBasket: [],
-    sum: 0,
-    allItemsCount: 0
+    inBasket: getBasketFromLS().basket,
+    sum: getBasketFromLS().sum,
 }
 
 export const HeaderSlice = createSlice({
@@ -43,15 +43,17 @@ export const HeaderSlice = createSlice({
         state.inBasket = state.inBasket.filter(el => el.id !== action.payload.id)
     },
     clearBasket: (state) => {
-        if(window.confirm('Are you sure about this action?')) state.inBasket = []
+        if(state.inBasket[0] !== undefined) {
+            let counter:number = 0;
+            state.inBasket.map(el => counter += el.count!)
+            if(counter >= 10 && window.confirm('Are you sure about this action?')) state.inBasket = []
+            if(counter < 10) state.inBasket = []
+        } 
     },
-    getAllItemsCount: (state) => {
-        state.allItemsCount = state.inBasket.reduce((acc,el) => acc + el.count!,0) 
-    }
-  },
+  }
 })
 
 
-export const {onAddBasketItem, onRemoveItem, removeFromBasket, clearBasket, getAllItemsCount} = HeaderSlice.actions
+export const {onAddBasketItem, onRemoveItem, removeFromBasket, clearBasket,} = HeaderSlice.actions
 
 export default HeaderSlice.reducer

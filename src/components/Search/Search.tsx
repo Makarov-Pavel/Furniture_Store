@@ -14,14 +14,14 @@ const Search:React.FC =() =>{
     dispatch(setSearchValue(str))
   }, 500),[])
 
-  const onEnterPressHandler = (e:React.KeyboardEvent) => {
+  const onEnterPressHandler = useCallback((e:React.KeyboardEvent) => {
     if(e.key === "Enter") dispatch(setSearchValue((e.target as HTMLInputElement).value))
-  }
+  }, [])
 
-  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeHandler = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value)
     debounceFunc(e.target.value)
-  }
+  }, [])
 
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -34,7 +34,7 @@ const Search:React.FC =() =>{
         placeholder='Search...'
         value={value}
         onChange={onChangeHandler}
-        onKeyDown = {(e)=>onEnterPressHandler(e)}
+        onKeyDown = {onEnterPressHandler}
         />
         {value && <CgClose className='close-icon' onClick={()=>{setValue(''); debounceFunc(''); inputRef.current?.focus()}}/>}
     </div>
