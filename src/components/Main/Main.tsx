@@ -1,6 +1,7 @@
 import './Main.css';
 import Skeleton from "./Skeleton";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux/es/hooks/useDispatch";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 import { onAddBasketItem } from "../../Redux/Slices/HeaderSlice";
 import { RootState } from '../../Redux/store';
 import React from 'react';

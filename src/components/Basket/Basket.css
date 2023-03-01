@@ -9,6 +9,10 @@
     align-items: center;
     justify-content: space-between;
 }
+.basketItem h2{
+    min-width: 100px;
+    padding-left: 10px;
+}
 .counterContainer{
     display: flex;
     align-items: center;

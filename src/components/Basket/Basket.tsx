@@ -1,7 +1,8 @@
 import "./Basket.css";
 import {BsTrash} from 'react-icons/bs'
 import { onAddBasketItem, onRemoveItem, removeFromBasket,clearBasket } from "../../Redux/Slices/HeaderSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux/es/hooks/useDispatch";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 import { RootState } from "../../Redux/store";
 import { useMemo } from "react";
 

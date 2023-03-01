@@ -26,6 +26,7 @@
 .filter-active {
         padding: 5px;
         background-color: #455442;
+        color: #fff;
         border: 1px solid #fff;
         border-bottom: none;
         border-radius: 10px 10px 0 0;
@@ -40,12 +41,13 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        min-width: 200px;
 }
 
 .sort-variants {
         position: absolute;
-        top: 6%;
-        right: 7%;
+        top: 52px;
+        right: 9%;
         background-color: rgb(105, 36, 36);
         padding: 20px;
         border-radius: 10px;
@@ -72,6 +74,7 @@
         color: #B4B198;
         margin-left: -10px;
 }
+
 
 
 

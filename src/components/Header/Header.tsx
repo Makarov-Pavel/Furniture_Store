@@ -2,12 +2,12 @@ import "./Header.css";
 import { SlBasket } from "react-icons/sl";
 import { Link, useLocation } from "react-router-dom";
 import Search from "../Search/Search";
-import { useSelector } from "react-redux";
+import {useSelector} from "react-redux/es/hooks/useSelector";
 import { RootState } from "../../Redux/store";
 import React, { useEffect, useRef } from "react";
 
 const Header:React.FC = React.memo(() =>{
-  const {inBasket} = useSelector((state:RootState)=>state.HeaderSlice)
+  const inBasket = useSelector((state:RootState)=>state.HeaderSlice.inBasket)
   const location = useLocation()
   const refFirstLoading = useRef(true)
   
@@ -27,7 +27,7 @@ const Header:React.FC = React.memo(() =>{
   return (
     <header className="header">
       <div className="header__logo">
-        <Link to="/?page=1&limit=6&status=all&sort=sortPopular">
+        <Link to="/" >
           <img src="/images/logo.png" alt="logo"></img>
         </Link>
       </div>
