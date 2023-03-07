@@ -1,0 +1,22 @@
+.contactPage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+    padding-top: 20px;
+}
+.contactPage__numbers li{
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+}
+.contactPage__numbers li span{
+    color: #ffffff9c;
+    text-shadow: none;
+}
+.contactPage__numbers li:not(:first-of-type){
+    padding-top: 20px;
+}
+iframe{
+    width: 400px;
+    height: 400px;
+}

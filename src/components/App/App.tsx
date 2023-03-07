@@ -12,7 +12,7 @@ const BasketPage = lazy(() => import("../../Pages/BasketPage"));
 const Footer = lazy(() => import("../Footer/Footer"));
 const ProfilePage = lazy(() => import("../../Pages/ProfilePage"));
 const AboutPage = lazy(() => import("../../Pages/AboutPage"));
-const ContactPage = lazy(() => import("../../Pages/ContactPage"));
+const ContactPage = lazy(() => import("../../Pages/ContactPage/ContactPage"));
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
