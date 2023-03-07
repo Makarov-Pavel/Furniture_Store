@@ -24,43 +24,52 @@ const Filter: React.FC = React.memo(() => {
   const limitOnPage = 6;
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const location = useLocation()
+  const location = useLocation();
   const refFirstRender = useRef(true);
+
 
   useEffect(() => {
     dispatch(changeIsLoading(true));
-    let urlParams =''
+    sessionStorage.setItem('headerLogoSearchParams', location.search)
+    let urlParams = "";
 
-    if(refFirstRender.current) {
-      urlParams = location.search
-      refFirstRender.current = false
-    }else{
+    if(refFirstRender.current && location.search === ''){
+      urlParams = '?page=1&limit=6'
+      sessionStorage.setItem('headerLogoSearchParams', '?page=1&limit=6')
+      refFirstRender.current = false;
+    }else if(refFirstRender.current && !location.search) {
+      urlParams = location.search;
+      refFirstRender.current = false;
+    } else {
       const newUrlParams = new URLSearchParams();
 
-    newUrlParams.set("page", `${currentPage}`);
-    newUrlParams.set("limit", `${limitOnPage}`);
-    sort === "Low" &&
-      (newUrlParams.set("sortBy", "price"), newUrlParams.set("order", "asc"));
-    sort === "Hight" &&
-      (newUrlParams.set("sortBy", "price"), newUrlParams.set("order", "desc"));
-    type !== "all" && newUrlParams.set("type", `${type}`);
-    searchValue && newUrlParams.set("search", `${searchValue}`);
+      newUrlParams.set("page", `${currentPage}`);
+      newUrlParams.set("limit", `${limitOnPage}`);
+      if(sort === "Low") {
+        newUrlParams.set("sortBy", "price")
+        newUrlParams.set("order", "asc")
+      };
+      if(sort === "Hight") {
+        newUrlParams.set("sortBy", "price")
+        newUrlParams.set("order", "desc")
+      };
+      type !== "all" && newUrlParams.set("type", `${type}`);
+      searchValue && newUrlParams.set("search", `${searchValue}`);
 
-    urlParams = `?${newUrlParams.toString()}`;
-    sessionStorage.setItem(
-      "searchParams",
-      JSON.stringify({
-        page: currentPage,
-        limit: limitOnPage,
-        sortBy: sort,
-        search: searchValue,
-        type: type,
-      })
-    );
-
-    navigate(urlParams);
+      urlParams = `?${newUrlParams.toString()}`;
+      sessionStorage.setItem(
+        "searchParams",
+        JSON.stringify({
+          page: currentPage,
+          limit: limitOnPage,
+          sortBy: sort,
+          search: searchValue,
+          type: type,
+        })
+      );
     }
 
+    navigate(urlParams);
     axios
       .get(`https://63e25b54109336b6cb05d56b.mockapi.io/items${urlParams}`)
       .then((arr) => {
@@ -68,8 +77,7 @@ const Filter: React.FC = React.memo(() => {
         dispatch(changeIsLoading(false));
       })
       .catch((err) => alert(err.message));
-
-  }, [type, currentPage, searchValue, sort, location.search]);
+  }, [type, currentPage, searchValue, sort,location.search]);
 
   return (
     <div className="filter-container">

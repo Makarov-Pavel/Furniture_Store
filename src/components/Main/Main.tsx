@@ -6,18 +6,25 @@ import { onAddBasketItem } from "../../Redux/Slices/HeaderSlice";
 import { RootState } from '../../Redux/store';
 import React from 'react';
 
-const Main:React.FC = () =>{
-    const searchValue = useSelector((state:RootState) => state.SearchSlice.searchValue)
-    const {items,isLoading} = useSelector((state:RootState) => state.FilterSlice)
-    const dispatch = useDispatch()
 
-    interface IMainElement{
+
+export interface IMainElement{
         id: number,
         name: string,
         img: string,
         description: string,
         price: string,
     }
+
+
+const Main:React.FC = () =>{
+    const searchValue = useSelector((state:RootState) => state.SearchSlice.searchValue)
+    const {items,isLoading} = useSelector((state:RootState) => state.FilterSlice)
+    const dispatch = useDispatch()
+
+    
+
+    
 
 
     return(
@@ -43,6 +50,7 @@ const Main:React.FC = () =>{
                     <button type='button' className="main-addBtn" onClick={()=>dispatch(onAddBasketItem(el))}>Add to basket</button>
                 </div>
             )}
+
         </div>
     )
 } 

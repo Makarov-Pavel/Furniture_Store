@@ -11,7 +11,6 @@ export const getSearchParamsFromSS = (): ISearchParamsFromSS => {
 
     if(data) return {
         page: data.page,
-
         sortBy: data.sortBy,
         type: data.type,
         search: data.search,

@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import Search from "../Search/Search";
 import {useSelector} from "react-redux/es/hooks/useSelector";
 import { RootState } from "../../Redux/store";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 
 const Header:React.FC = React.memo(() =>{
   const inBasket = useSelector((state:RootState)=>state.HeaderSlice.inBasket)
@@ -24,10 +24,11 @@ const Header:React.FC = React.memo(() =>{
   let allItemsCount:number = 0;
   inBasket.map(el => allItemsCount += el.count!)
 
+  const data = useMemo(()=>sessionStorage.getItem('headerLogoSearchParams'),[])
   return (
     <header className="header">
       <div className="header__logo">
-        <Link to="/" >
+        <Link to={`/${data}`} >
           <img src="/images/logo.png" alt="logo"></img>
         </Link>
       </div>

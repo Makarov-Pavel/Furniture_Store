@@ -1,3 +1,5 @@
+import { useDispatch } from "react-redux";
+import { setCurrentPage } from "../../Redux/Slices/PaginationSlice";
 import Filter from "../Filters/Filter";
 import Header from "../Header/Header";
 import InformationAbout from "../InformationAbout/InformationAbout";
@@ -5,18 +7,17 @@ import { lazy, Suspense, useCallback } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Pagination from "../Pagination/Pagination";
-const Basket = lazy(() => import("../Basket/Basket"));
+
+const BasketPage = lazy(() => import("../../Pages/BasketPage"));
 const Footer = lazy(() => import("../Footer/Footer"));
-import { useDispatch } from "react-redux";
-import { setCurrentPage } from "../../Redux/Slices/PaginationSlice";
+const ProfilePage = lazy(() => import("../../Pages/ProfilePage"));
+const AboutPage = lazy(() => import("../../Pages/AboutPage"));
+const ContactPage = lazy(() => import("../../Pages/ContactPage"));
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
 
-  const setCurrentPageMemo = useCallback(
-    (x: number) => dispatch(setCurrentPage(x)),
-    []
-  );
+  const setCurrentPageMemo = useCallback((x: number) => dispatch(setCurrentPage(x)),[dispatch]);
 
   return (
     <div className="App">
@@ -36,11 +37,19 @@ const App: React.FC = () => {
         />
         <Route
           path="/profile"
-          element={<div className="notFound">PROFILE</div>}
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <ProfilePage />
+            </Suspense>
+          }
         />
         <Route
           path="/about"
-          element={<div className="notFound">ABOUT US</div>}
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <AboutPage />
+            </Suspense>
+          }
         />
         <Route
           path="/basket"
@@ -50,13 +59,17 @@ const App: React.FC = () => {
                 <div className="fallbackBasket">Loading the basket...</div>
               }
             >
-              <Basket />
+              <BasketPage />
             </Suspense>
           }
         />
         <Route
           path="/contact"
-          element={<div className="notFound">CONTACT US</div>}
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <ContactPage />
+            </Suspense>
+          }
         />
       </Routes>
       <Suspense>
