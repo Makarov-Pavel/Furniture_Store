@@ -1,0 +1,21 @@
+.nameChangeContainer{
+    border: 1px solid #000;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 0 20px;
+}
+.nameChangeContainer input{
+    outline: 1px solid red;
+    width: 50%;
+    font-size: 20px;
+}
+.nameChangeContainer button{
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: blue;
+    color: #fff;
+}

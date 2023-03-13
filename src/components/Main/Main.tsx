@@ -22,11 +22,6 @@ const Main:React.FC = () =>{
     const {items,isLoading} = useSelector((state:RootState) => state.FilterSlice)
     const dispatch = useDispatch()
 
-    
-
-    
-
-
     return(
         <div className='main-container'>
             {isLoading && [...new Array(5)].map((_,i)=><Skeleton key={i}/>)}

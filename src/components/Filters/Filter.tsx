@@ -15,7 +15,7 @@ import { setCurrentPage } from "../../Redux/Slices/PaginationSlice";
 const Filter: React.FC = React.memo(() => {
   const [sortBlockOpen, setSortBlockOpen] = useState(false);
   const { type, sort } = useSelector((state: RootState) => state.FilterSlice);
-  const searchValue = useSelector(
+  const searchValue : string = useSelector(
     (state: RootState) => state.SearchSlice.searchValue
   );
   const currentPage = useSelector(
@@ -30,14 +30,12 @@ const Filter: React.FC = React.memo(() => {
 
   useEffect(() => {
     dispatch(changeIsLoading(true));
-    sessionStorage.setItem('headerLogoSearchParams', location.search)
     let urlParams = "";
 
-    if(refFirstRender.current && location.search === ''){
+    if((refFirstRender.current && location.search === '') || (refFirstRender.current && location.search === '?page=1&limit=6')){
       urlParams = '?page=1&limit=6'
-      sessionStorage.setItem('headerLogoSearchParams', '?page=1&limit=6')
       refFirstRender.current = false;
-    }else if(refFirstRender.current && !location.search) {
+    }else if(refFirstRender.current && location.search) {
       urlParams = location.search;
       refFirstRender.current = false;
     } else {
@@ -77,7 +75,8 @@ const Filter: React.FC = React.memo(() => {
         dispatch(changeIsLoading(false));
       })
       .catch((err) => alert(err.message));
-  }, [type, currentPage, searchValue, sort,location.search]);
+      console.log(type,sort)
+  }, [type, currentPage, searchValue, sort]);
 
   return (
     <div className="filter-container">

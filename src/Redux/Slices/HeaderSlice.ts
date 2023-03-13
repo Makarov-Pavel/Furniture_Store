@@ -12,7 +12,7 @@ export type BasketItemType = {
 
 interface IHeaderState {
     inBasket: BasketItemType[],
-    sum: number
+    sum: number,
 }
 
 const initialState:IHeaderState = {
@@ -54,6 +54,6 @@ export const HeaderSlice = createSlice({
 })
 
 
-export const {onAddBasketItem, onRemoveItem, removeFromBasket, clearBasket,} = HeaderSlice.actions
+export const {onAddBasketItem, onRemoveItem, removeFromBasket, clearBasket} = HeaderSlice.actions
 
 export default HeaderSlice.reducer

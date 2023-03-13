@@ -8,10 +8,9 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Pagination from "../Pagination/Pagination";
 
-const BasketPage = lazy(() => import("../../Pages/BasketPage"));
+const BasketPage = lazy(() => import("../../Pages/BasketPage/BasketPage"));
 const Footer = lazy(() => import("../Footer/Footer"));
-const ProfilePage = lazy(() => import("../../Pages/ProfilePage"));
-const AboutPage = lazy(() => import("../../Pages/AboutPage"));
+const ProfilePage = lazy(() => import("../../Pages/ProfilePage/ProfilePage"));
 const ContactPage = lazy(() => import("../../Pages/ContactPage/ContactPage"));
 
 const App: React.FC = () => {
@@ -40,14 +39,6 @@ const App: React.FC = () => {
           element={
             <Suspense fallback={<div>Loading...</div>}>
               <ProfilePage />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <AboutPage />
             </Suspense>
           }
         />

@@ -48,7 +48,7 @@
         position: absolute;
         top: 52px;
         right: 9%;
-        background-color: rgb(105, 36, 36);
+        background-color: #B4B198;
         padding: 20px;
         border-radius: 10px;
         display: flex;
@@ -61,12 +61,14 @@
 .current-sort {
         color: #B4B198;
         text-decoration: underline;
+        text-shadow: 1px 1px 1px #000;
 }
 
 .sort-by-text {
         font-size: 20px;
         font-family: 'Josefin Sans', sans-serif;
         color: #B4B198;
+        text-shadow: 1px 1px 1px #000;
 }
 
 .dropdown-icon {

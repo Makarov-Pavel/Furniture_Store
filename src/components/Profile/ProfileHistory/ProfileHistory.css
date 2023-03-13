@@ -1,0 +1,19 @@
+.historyContainer{
+    padding: 20px;
+    border: 1px solid #000;
+    flex-grow: 1;
+}
+.historyListItem {
+    display: flex;
+    gap: 20px;
+}
+.historyListItem:not(:last-of-type){
+    margin-bottom: 20px;
+}
+.historyListItem div{
+    font-size: 20px;
+}
+.historyListItem img{
+    width: 100px;
+    height: auto;
+}

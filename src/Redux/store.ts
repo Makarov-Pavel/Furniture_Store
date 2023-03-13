@@ -4,13 +4,15 @@ import FilterSlice from './Slices/FilterSlice'
 import HeaderSlice from './Slices/HeaderSlice'
 import SearchSlice from './Slices/SearchSlice'
 import PaginationSlice from './Slices/PaginationSlice';
+import ProfileSlice  from './Slices/ProfileSlice';
 
 export const store = configureStore({
   reducer: {
     FilterSlice,
     HeaderSlice,
     SearchSlice,
-    PaginationSlice
+    PaginationSlice,
+    ProfileSlice
   },
 })
 

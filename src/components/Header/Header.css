@@ -27,3 +27,6 @@
 .menu__item a:hover{
     opacity: 0.5;
 }
+.activeMenuItem a{
+    color: #CEECF2;
+}

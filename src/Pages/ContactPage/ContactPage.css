@@ -4,10 +4,12 @@
     justify-content: center;
     gap: 200px;
     padding-top: 20px;
+    padding-bottom: 5%;
 }
 .contactPage__numbers li{
     color: #fff;
     text-shadow: 1px 1px 1px #000;
+    font-size: 20px;
 }
 .contactPage__numbers li span{
     color: #ffffff9c;
