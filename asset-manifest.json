@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/Furniture_Store/static/css/main.eac4c610.css",
-    "main.js": "/Furniture_Store/static/js/main.43109622.js",
+    "main.js": "/Furniture_Store/static/js/main.4f6f1a9a.js",
     "static/css/641.71ffd699.chunk.css": "/Furniture_Store/static/css/641.71ffd699.chunk.css",
     "static/js/641.810dd37a.chunk.js": "/Furniture_Store/static/js/641.810dd37a.chunk.js",
     "static/css/971.d0e18a12.chunk.css": "/Furniture_Store/static/css/971.d0e18a12.chunk.css",
     "static/js/971.02fdde2a.chunk.js": "/Furniture_Store/static/js/971.02fdde2a.chunk.js",
-    "static/css/378.18e07fdb.chunk.css": "/Furniture_Store/static/css/378.18e07fdb.chunk.css",
+    "static/css/378.564d5b04.chunk.css": "/Furniture_Store/static/css/378.564d5b04.chunk.css",
     "static/js/378.e4a7afa8.chunk.js": "/Furniture_Store/static/js/378.e4a7afa8.chunk.js",
     "static/css/563.64e83d4b.chunk.css": "/Furniture_Store/static/css/563.64e83d4b.chunk.css",
     "static/js/563.80cc16b8.chunk.js": "/Furniture_Store/static/js/563.80cc16b8.chunk.js",
@@ -15,12 +15,12 @@
     "static/media/info-bg.jpg": "/Furniture_Store/static/media/info-bg.b70b99ff2303c6dbf1fa.jpg",
     "index.html": "/Furniture_Store/index.html",
     "main.eac4c610.css.map": "/Furniture_Store/static/css/main.eac4c610.css.map",
-    "main.43109622.js.map": "/Furniture_Store/static/js/main.43109622.js.map",
+    "main.4f6f1a9a.js.map": "/Furniture_Store/static/js/main.4f6f1a9a.js.map",
     "641.71ffd699.chunk.css.map": "/Furniture_Store/static/css/641.71ffd699.chunk.css.map",
     "641.810dd37a.chunk.js.map": "/Furniture_Store/static/js/641.810dd37a.chunk.js.map",
     "971.d0e18a12.chunk.css.map": "/Furniture_Store/static/css/971.d0e18a12.chunk.css.map",
     "971.02fdde2a.chunk.js.map": "/Furniture_Store/static/js/971.02fdde2a.chunk.js.map",
-    "378.18e07fdb.chunk.css.map": "/Furniture_Store/static/css/378.18e07fdb.chunk.css.map",
+    "378.564d5b04.chunk.css.map": "/Furniture_Store/static/css/378.564d5b04.chunk.css.map",
     "378.e4a7afa8.chunk.js.map": "/Furniture_Store/static/js/378.e4a7afa8.chunk.js.map",
     "563.64e83d4b.chunk.css.map": "/Furniture_Store/static/css/563.64e83d4b.chunk.css.map",
     "563.80cc16b8.chunk.js.map": "/Furniture_Store/static/js/563.80cc16b8.chunk.js.map",
@@ -29,6 +29,6 @@
   },
   "entrypoints": [
     "static/css/main.eac4c610.css",
-    "static/js/main.43109622.js"
+    "static/js/main.4f6f1a9a.js"
   ]
 }
