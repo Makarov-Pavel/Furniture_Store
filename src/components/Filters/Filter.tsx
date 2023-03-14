@@ -75,7 +75,6 @@ const Filter: React.FC = React.memo(() => {
         dispatch(changeIsLoading(false));
       })
       .catch((err) => alert(err.message));
-      console.log(type,sort)
   }, [type, currentPage, searchValue, sort]);
 
   return (
