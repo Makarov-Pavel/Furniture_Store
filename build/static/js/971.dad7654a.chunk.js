@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkmy_app=self.webpackChunkmy_app||[]).push([[971],{971:function(n,e,r){r.r(e),r.d(e,{default:function(){return o}});var t=r(820),s=r(184),o=function(){return(0,s.jsx)("footer",{className:"footer",children:(0,s.jsxs)("p",{children:["Copyright information ",(0,s.jsx)(t.ZVS,{})]})})}}}]);
-//# sourceMappingURL=971.dad7654a.chunk.js.map
