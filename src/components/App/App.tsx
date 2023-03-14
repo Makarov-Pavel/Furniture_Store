@@ -35,7 +35,7 @@ const App: React.FC = () => {
           }
         />
         <Route
-          path="/profile"
+          path="/Furniture_Store/profile"
           element={
             <Suspense fallback={<div>Loading...</div>}>
               <ProfilePage />
@@ -43,7 +43,7 @@ const App: React.FC = () => {
           }
         />
         <Route
-          path="/basket"
+          path="/Furniture_Store/basket"
           element={
             <Suspense
               fallback={
@@ -55,7 +55,7 @@ const App: React.FC = () => {
           }
         />
         <Route
-          path="/contact"
+          path="/Furniture_Store/contact"
           element={
             <Suspense fallback={<div>Loading...</div>}>
               <ContactPage />

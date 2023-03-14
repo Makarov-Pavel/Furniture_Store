@@ -28,21 +28,21 @@ const Header:React.FC = React.memo(() =>{
   return (
     <header className="header">
       <div className="header__logo">
-        <a href={`/?page=1&limit=6`} onClick={()=>onClickHeaderLogo()}>
-          <img src="/images/logo.png" alt="logo"></img>
+        <a href={`/Furniture_Store/?page=1&limit=6`} onClick={()=>onClickHeaderLogo()}>
+          <img src="images/logo.png" alt="logo"></img>
         </a>
       </div>
        {location.pathname === '/' && <Search />}
       <div className="header__menu">
         <ul className="menu__list">
-          <li className={`menu__item ${location.pathname === '/contact' ? 'activeMenuItem' :''}`}>
-            <Link to="/contact">Contact us</Link>{" "}
+          <li className={`menu__item ${location.pathname === '/Furniture_Store/contact' ? 'activeMenuItem' :''}`}>
+            <Link to="/Furniture_Store/contact">Contact us</Link>{" "}
           </li>
-          <li className={`menu__item ${location.pathname === '/profile' ? 'activeMenuItem' :''}`}>
-            <Link to="/profile">Profile</Link>{" "}
+          <li className={`menu__item ${location.pathname === '/Furniture_Store/profile' ? 'activeMenuItem' :''}`}>
+            <Link to="/Furniture_Store/profile">Profile</Link>{" "}
           </li>
-          <li className={`menu__item ${location.pathname === '/basket' ? 'activeMenuItem' :''}`}>
-          <Link to="/basket"><SlBasket />{allItemsCount}</Link>
+          <li className={`menu__item ${location.pathname === '/Furniture_Store/basket' ? 'activeMenuItem' :''}`}>
+          <Link to="/Furniture_Store/basket"><SlBasket />{allItemsCount}</Link>
           </li>
         </ul>
       </div>
