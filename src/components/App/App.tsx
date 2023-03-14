@@ -24,7 +24,7 @@ const App: React.FC = () => {
       <InformationAbout />
       <Routes>
         <Route
-          path="/"
+          path="/Furniture_Store"
           element={
             <>
               <Filter />
