@@ -2,7 +2,7 @@
     {
       "id": 1,
       "name": "Armchair 1",
-      "img": "/images/armchair1.jpg",
+      "img": "images/armchair1.jpg",
       "description": "a 1",
       "price": "425",
       "type": "a"
@@ -10,7 +10,7 @@
     {
       "id": 2,
       "name": "Armchair 2",
-      "img": "/images/armchair_2.jpg",
+      "img": "images/armchair_2.jpg",
       "description": "a 2",
       "price": "216",
       "type": "a"
@@ -18,7 +18,7 @@
     {
       "id": 3,
       "name": "Armchair 3",
-      "img": "/images/armchair_3.jpg",
+      "img": "images/armchair_3.jpg",
       "description": "a 3",
       "price": "487",
       "type": "a"
@@ -26,7 +26,7 @@
     {
       "id": 4,
       "name": "Armchair 4",
-      "img": "/images/armchair_4.jpg",
+      "img": "images/armchair_4.jpg",
       "description": "a 4",
       "price": "356",
       "type": "a"
@@ -34,7 +34,7 @@
     {
       "id": 5,
       "name": "Armchair 5",
-      "img": "/images/armchair_5.jpg",
+      "img": "images/armchair_5.jpg",
       "description": "a 5",
       "price": "352",
       "type": "a"
@@ -42,7 +42,7 @@
     {
       "id": 6,
       "name": "Dresser 1",
-      "img": "/images/dresser_1.jpg",
+      "img": "images/dresser_1.jpg",
       "description": "d 1",
       "price": "229",
       "type": "d"
@@ -50,7 +50,7 @@
     {
       "id": 7,
       "name": "Dresser 2",
-      "img": "/images/dresser_2.jpg",
+      "img": "images/dresser_2.jpg",
       "description": "d 2",
       "price": "115",
       "type": "d"
@@ -58,7 +58,7 @@
     {
       "id": 8,
       "name": "Dresser 3",
-      "img": "/images/dresser_3.jpg",
+      "img": "images/dresser_3.jpg",
       "description": "d 3",
       "price": "482",
       "type": "d"
@@ -66,7 +66,7 @@
     {
       "id": 9,
       "name": "Dresser 4",
-      "img": "/images/dresser_4.jpg",
+      "img": "images/dresser_4.jpg",
       "description": "d 4",
       "price": "166",
       "type": "d"
@@ -74,7 +74,7 @@
     {
       "id": 10,
       "name": "Dresser 5",
-      "img": "/images/dresser_5.jpg",
+      "img": "images/dresser_5.jpg",
       "description": "d 5",
       "price": "192",
       "type": "d"
@@ -82,7 +82,7 @@
     {
       "id": 11,
       "name": "Sofa 1",
-      "img": "/images/sofa_1.jpg",
+      "img": "images/sofa_1.jpg",
       "description": "s 1",
       "price": "341",
       "type": "s"
@@ -90,7 +90,7 @@
     {
       "id": 12,
       "name": "Sofa 2",
-      "img": "/images/sofa_2.jpg",
+      "img": "images/sofa_2.jpg",
       "description": "s 2",
       "price": "329",
       "type": "s"
@@ -98,7 +98,7 @@
     {
       "id": 13,
       "name": "Sofa 3",
-      "img": "/images/sofa_3.jpg",
+      "img": "images/sofa_3.jpg",
       "description": "s 3",
       "price": "254",
       "type": "s"
@@ -106,7 +106,7 @@
     {
       "id": 14,
       "name": "Sofa 4",
-      "img": "/images/sofa_4.jpg",
+      "img": "images/sofa_4.jpg",
       "description": "s 4",
       "price": "323",
       "type": "s"
@@ -114,7 +114,15 @@
     {
       "id": 15,
       "name": "Sofa 5",
-      "img": "/images/sofa_5.jpg",
+      "img": "images/sofa_5.jpg",
+      "description": "s 5",
+      "price": "479",
+      "type": "s"
+    },
+    {
+      "id": 16,
+      "name": "Sofa 5",
+      "img": "images/sofa_5.jpg",
       "description": "s 5",
       "price": "479",
       "type": "s"

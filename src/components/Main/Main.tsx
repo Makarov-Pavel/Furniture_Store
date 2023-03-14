@@ -29,7 +29,7 @@ const Main:React.FC = () =>{
             {searchValue && !isLoading && items.map((el:IMainElement) => 
                 <div key={el.id} className='main-item'>
                     <h2>{el.name}</h2>
-                    <img src={el.img} alt='213'></img>
+                    <img src={el.img} alt='item'></img>
                     <p>{el.description}</p>
                     <span>{el.price}</span>
                     <button type='button' className="main-addBtn" onClick={()=>dispatch(onAddBasketItem(el))}>Add to basket</button>
@@ -39,7 +39,7 @@ const Main:React.FC = () =>{
             {!isLoading && !searchValue && items.map((el:IMainElement) => 
                 <div key={el.id} className='main-item'>
                     <h2>{el.name}</h2>
-                    <img src={el.img} alt='213'></img>
+                    <img src={el.img} alt='item'></img>
                     <p>{el.description}</p>
                     <span>{el.price}</span>
                     <button type='button' className="main-addBtn" onClick={()=>dispatch(onAddBasketItem(el))}>Add to basket</button>
