@@ -15,7 +15,7 @@ function ProfileNameChange() {
   },[inputValue])
 
   return (
-    <div className='nameChangeContainer'>
+    <div className={`nameChangeContainer ${inputValue && inputValue.length < 5 ? 'wrongName' : ''}`}>
       <input
         placeholder='write a name...'
         maxLength={30}
